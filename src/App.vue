@@ -42,7 +42,7 @@ export default {
 
 <template>
   <div class="App">
-    <NoteCard v-for="product of products" :product="product" v-on:remove-card="removeCard" />
+    <NoteCard v-for="product of products" :product="product" @remove-card="removeCard" />
     <button class="create-new-card" @click="createNewCard">
       Create new card
     </button>

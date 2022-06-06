@@ -14,25 +14,14 @@ export default {
     updateNoteCard
   },
   props: ['product'],
-  methods: {
-    showPopup() {
-      this.isVisiblePopup = true;
-    },
-    closePopup() {
-      this.isVisiblePopup = false;
-    },
-    confirmPopup() {
-      this.$emit('confirmPopup')
-    },
-  },
 }
 </script>
 
 <template>
   <div class="card">
     <updateNoteCard :product="product" v-if="isEditMenuOpen" v-on:close-edit-menu="isEditMenuOpen = !isEditMenuOpen" />
-    <popup :action="'Remove'" v-if="isVisiblePopup" v-on:remove-card="$emit('remove-card', product.id)"
-      @close-remove-card-window="closePopup">
+    <popup :action="'Remove'" v-if="isVisiblePopup" @yes="$emit('remove-card', product.id), isVisiblePopup = !isVisiblePopup"
+      @no="isVisiblePopup = !isVisiblePopup">
       {{ product.title }}
     </popup>
     <h3 class="card__title">{{ product.title }}</h3>
@@ -44,7 +33,7 @@ export default {
     </ul>
     <div class="card__footer">
       <button class="card__btn card__btn_edit" @click="isEditMenuOpen = !isEditMenuOpen">Edit</button>
-      <button class="card__btn card__btn_rm" @click="showPopup">Remove</button>
+      <button class="card__btn card__btn_rm" @click="isVisiblePopup = !isVisiblePopup">Remove</button>
     </div>
   </div>
 </template>

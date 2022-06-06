@@ -8,8 +8,8 @@
       ?
     </div>
     <div class="popup__actions">
-      <button class="popup__btn popup__btn-no" @click="$emit('close-remove-card-window')">No</button>
-      <button class="popup__btn popup__btn-yes" @click="$emit('remove-card')">Yes</button>
+      <button class="popup__btn popup__btn-no" @click="$emit('no')">No</button>
+      <button class="popup__btn popup__btn-yes" @click="$emit('yes')">Yes</button>
     </div>
   </div>
 </template>

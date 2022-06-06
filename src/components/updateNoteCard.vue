@@ -15,8 +15,8 @@
           <input class="list__checkbox" type="checkbox" v-model="note.completed" v-if="!note.isEditVisible">
           <span :class="{ 'note-title': note.completed }" v-if="!note.isEditVisible">{{ note.text }}</span>
           <input class="list__input" type="text" v-if="note.isEditVisible" v-model="note.text">
-          <popup :action="'Remove'" v-if="isRemoveWindowOpen" v-on:remove-card="removeNote(note.id)"
-            @close-remove-card-window="isRemoveWindowOpen = !isRemoveWindowOpen">
+          <popup :action="'Remove'" v-if="isRemoveWindowOpen" @yes="removeNote(note.id)"
+            @no="isRemoveWindowOpen = !isRemoveWindowOpen">
             {{ note.text }}
           </popup>
         </label>
@@ -33,8 +33,8 @@
       <button class="btn btn_confirm" @click="edit">Confirm</button>
     </div>
 
-    <popup :action="'Live edit menu'" v-if="isEditWindowOpen" @remove-card="$emit('close-edit-menu')"
-      @close-remove-card-window="isEditWindowOpen = !isEditWindowOpen">
+    <popup :action="'Do you want leave edit menu'" v-if="isEditWindowOpen" @yes="$emit('close-edit-menu')"
+      @no="isEditWindowOpen = !isEditWindowOpen">
       {{ copyProduct.title }}
     </popup>
   </div>
