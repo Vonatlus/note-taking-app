@@ -2,7 +2,6 @@
 let id = 0;
 
 import NoteCard from './components/NoteCard.vue'
-import { v4 as uuidv4 } from 'uuid'
 
 export default {
   components: {
@@ -15,9 +14,9 @@ export default {
           id: id++,
           title: 'Purchases',
           notes: [
-            { id: uuidv4, text: 'Buy bread', completed: false },
-            { id: uuidv4, text: 'Buy cheese', completed: true },
-            { id: uuidv4, text: 'Buy onion', completed: false }
+            { id: 123, text: 'Buy bread', completed: false },
+            { id: 456, text: 'Buy cheese', completed: true },
+            { id: 789, text: 'Buy onion', completed: false }
           ],
           isEditVisible: false,
         },

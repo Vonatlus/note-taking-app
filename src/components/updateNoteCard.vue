@@ -15,7 +15,7 @@
           <input class="list__checkbox" type="checkbox" v-model="note.completed" v-if="!note.isEditVisible">
           <span :class="{ 'note-title': note.completed }" v-if="!note.isEditVisible">{{ note.text }}</span>
           <input class="list__input" type="text" v-if="note.isEditVisible" v-model="note.text">
-          <popup :action="'Remove'" v-if="isRemoveWindowOpen" @remove-card="removeNote(note.id)"
+          <popup :action="'Remove'" v-if="isRemoveWindowOpen" v-on:remove-card="removeNote(note.id)"
             @close-remove-card-window="isRemoveWindowOpen = !isRemoveWindowOpen">
             {{ note.text }}
           </popup>
@@ -42,7 +42,6 @@
 
 <script>
 import popup from './popup.vue'
-import { v4 as uuidv4 } from 'uuid'
 
 export default {
   props: ['product'],
@@ -62,7 +61,7 @@ export default {
     addNote() {
       if (this.newNote) {
         this.copyProduct.notes.push({
-          id: uuidv4, text: this.newNote, completed: false
+          id: new Date(), text: this.newNote, completed: false
         });
         this.newNote = '';
       }
@@ -159,6 +158,9 @@ $green: #06842c;
 .list {
   padding: 0;
   margin-bottom: 25px;
+
+  max-height: 200px;
+  overflow: auto;
 
   &__item {
     display: flex;

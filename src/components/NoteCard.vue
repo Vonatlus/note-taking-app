@@ -37,7 +37,7 @@ export default {
     </popup>
     <h3 class="card__title">{{ product.title }}</h3>
     <ul class="card__list">
-      <li class="card__list-item" :class="{ 'card__list-item-completed': note.completed }" v-for="note of product.notes"
+      <li class="card__list-item" :class="{ 'card__list-item-completed': note.completed }" v-for="note of product.notes.slice(0, 5)"
         :key="note.id">
         {{ note.text }}
       </li>
@@ -83,6 +83,7 @@ $background-color: #fdf7ef;
   &__list {
     padding-left: 0;
     list-style: none;
+    overflow: auto;
   }
 
   &__list-item {
