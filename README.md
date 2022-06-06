@@ -1,29 +1,28 @@
-# vue-project
+# Project Notes
 
-This template should help get you started developing with Vue 3 in Vite.
+- [DEMO LINK](https://vonatlus.github.io/note-taking-app/)
 
-## Recommended IDE Setup
+## Description
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+In ***Notes*** project you can add, delete and edit card with notes. 
 
-## Customize configuration
+## Technologies used in project:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* Vue 3
 
-## Project Setup
 
-```sh
-npm install
-```
+## Local development
 
-### Compile and Hot-Reload for Development
+### Dependencies
+* Node v12.16.3 and higher
+* NPM v6.14.4 and higher
 
-```sh
-npm run dev
-```
+### Installing
+* Fork and clone this repository
+* Run `npm install` in your terminal
+* Run `npm run dev`
 
-### Compile and Minify for Production
+## Troubleshooting
 
-```sh
-npm run build
-```
+Any advise for common problems or issues.
+For any contributing or problem solving you could find me in [telegram](https://t.me/Sultanov_Aleksandre).
